@@ -1,0 +1,67 @@
+@import '../colour';
+@import '../fonts';
+
+html {
+	overflow: hidden;
+	body {
+		overflow: hidden;
+		padding: 0;
+		margin: 0;
+		main {
+			#logo {
+				position: fixed;
+				top: 5vh;
+				left: 5vw;
+				width: 25vw;
+			}
+			#background {
+				border-radius: 50%;
+				background-color: $primary;
+				width: 70vw;
+				height: 70vw;
+				padding: 7vh;
+				position: fixed;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				text-align: center;
+				h1 {
+					color: $secondary;
+					margin: 0;
+				}
+				h2 {
+					margin: 0;
+				}
+			}
+			a {
+				position: fixed;
+				bottom: 5vh;
+				right: 5vw;
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	html {
+		body {
+			main {
+				#logo {
+					top: 20vh;
+					width: 10vw;
+				}
+				#background {
+					width: 75vh;
+					height: 75vh;
+				}
+				a {
+					bottom: 20vh;
+				}
+			}
+		}
+	}
+}
