@@ -26,9 +26,9 @@
 	<body>
 		<header>
 			<div id='content'>
-				<img id='logo' src='/res/img/logo/logo.svg' alt='AR Burrows Web Development Logo'/>
+			<img class='site_logo' src='<?php echo get_custom_logo_url(); ?>' alt='AR Burrows Web Development Logo'/>
 				<section id='background' class='primary'>
-					<h1>AR Burrows Web Development</h1>
+					<h1><?php get_title(); ?></h1>
 					<h2>Get a website you can be proud of</h2>
 				</section>
 				<div id='contact'>
