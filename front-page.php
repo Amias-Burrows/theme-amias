@@ -5,7 +5,12 @@ get_header();
 <main>
 
 	<?php
-	get_post();
+		if(have_posts()) {
+			while(have_posts()) {
+				the_post();
+				the_content();
+			}
+		}
 	?>
 
 </main>

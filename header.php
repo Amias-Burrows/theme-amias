@@ -11,32 +11,33 @@
 		<meta property="og:description" content="<?php get_the_excerpt(); ?>"/>
 
 		<?php
-		the_head();
+		wp_head();
 		?>
 		<link rel="stylesheet" href="/res/css/main.css"/>
 
-			<!-- Raleway Font -->
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,300;0,500;0,700;0,900;1,100;1,300;1,500;1,700;1,900&display=swap" rel="stylesheet"> 
-
-			<!-- Google Tag Manager -->
+			<!-- Google Tag Manager
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPE0E8RNM4"></script><script src="/res/js/analytics.js"></script>
+			-->
 	</head>
 	<body>
 		<header>
-			<div id='content'>
-			<img class='site_logo' src='<?php echo get_custom_logo_url(); ?>' alt='AR Burrows Web Development Logo'/>
+			<?php
+			if (function_exists('the_custom_logo')) {
+				$custom_logo_id = get_theme_mod('custom_logo');
+				$logo = wp_get_attachment_image_src($custom_logo_id);
+			}
+			?>
+			<img class='site_logo' src='<?php echo $logo; ?>' alt='AR Burrows Web Development Logo'/>
 				<section id='background' class='primary'>
-					<h1><?php get_title(); ?></h1>
-					<h2>Get a website you can be proud of</h2>
+					<h1><?php get_bloginfo('name'); ?></h1>
+					<h2><?php get_bloginfo('description'); ?></h2>
 				</section>
 				<div id='contact'>
 					<div id='handle'>
 						<svg
 							preserveAspectRatio='xMidYMid meet'
 							zoomAndPan='magnify'
-								viewbox='0 0 100 100'
+							viewbox='0 0 100 100'
 						>
 							<g id='closed'>
 								<circle cx='20' cy='50' r='8'/>
@@ -49,7 +50,7 @@
 							</g>
 						</svg>
 					</div>
-					<a id='phone' href='tel:07812061332'>
+					<a id='phone' href='<?php get_theme_mod('amias_contact_phone'); ?>'>
 						<svg 
 							viewbox='0 0 512 512'
 							preserveAspectRatio='xMidYMid meet'
@@ -60,7 +61,7 @@
 							<path id='stroke' d="M403.287,258.505c-4.376,0-8.775-1.022-12.856-3.091c-9.548-4.843-15.492-14.484-15.535-25.183 h-78.273c-24.305,0-44.077-19.772-44.077-44.077v-29.729c0-24.305,19.774-44.077,44.077-44.077h10.444 c8.915,0,16.142,7.228,16.142,16.142c0,8.914-7.227,16.142-16.142,16.142h-10.444c-6.504,0-11.793,5.29-11.793,11.793v29.729 c0,6.502,5.29,11.793,11.793,11.793h94.415c8.915,0,16.142,7.228,16.142,16.142v8.307l69.821-51.104l-69.821-51.106v8.305 c0,8.914-7.227,16.142-16.142,16.142H364.94c-8.915,0-16.142-7.228-16.142-16.142s7.227-16.142,16.142-16.142h9.956 c0.042-10.697,5.987-20.339,15.535-25.183c9.584-4.862,20.922-3.935,29.59,2.408l80.365,58.823 c7.272,5.324,11.614,13.882,11.613,22.894c-0.002,9.012-4.342,17.569-11.614,22.891l-80.365,58.822 C415.045,256.647,409.187,258.505,403.287,258.505z"/>
 						</svg>
 					</a>
-					<a id='email' href='mailto:contact@amias.dev'>
+					<a id='email' href='<?php get_theme_mod('amias_contact_email'); ?>'>
 						<svg 
 							viewbox='0 0 75.3 75.3'
 							preserveAspectRatio='xMidYMid meet'
@@ -69,7 +70,7 @@
 							<path id='stroke' d="M66.097,12.089h-56.9C4.126,12.089,0,16.215,0,21.286v32.722c0,5.071,4.126,9.197,9.197,9.197h56.9 c5.071,0,9.197-4.126,9.197-9.197V21.287C75.295,16.215,71.169,12.089,66.097,12.089z M61.603,18.089L37.647,33.523L13.691,18.089 H61.603z M66.097,57.206h-56.9C7.434,57.206,6,55.771,6,54.009V21.457l29.796,19.16c0.04,0.025,0.083,0.042,0.124,0.065 c0.043,0.024,0.087,0.047,0.131,0.069c0.231,0.119,0.469,0.215,0.712,0.278c0.025,0.007,0.05,0.01,0.075,0.016 c0.267,0.063,0.537,0.102,0.807,0.102c0.001,0,0.002,0,0.002,0c0.002,0,0.003,0,0.004,0c0.27,0,0.54-0.038,0.807-0.102 c0.025-0.006,0.05-0.009,0.075-0.016c0.243-0.063,0.48-0.159,0.712-0.278c0.044-0.022,0.088-0.045,0.131-0.069 c0.041-0.023,0.084-0.04,0.124-0.065l29.796-19.16v32.551C69.295,55.771,67.86,57.206,66.097,57.206z"/>
 						</svg>
 					</a>
-					<a id='download' href='/res/contact.vcf'>
+					<a id='download' href='<?php get_theme_mod('amias_contact_download'); ?>'>
 						<svg
 							viewbox='0 0 400 400'
 							preserveAspectRatio='xMidYMid meet'
@@ -90,6 +91,16 @@
 					<line id='btm' x1='10' x2='90' y1='80' y2='80'/>
 				</svg>
 				<nav class='secondary'>
+					<?php
+					wp_nav_menu(
+						array(
+							'menu' => 'main',
+							'menu_id' => 'main',
+							'container' => '',
+							'theme_location' => 'main_menu'
+						)
+					);
+					?>
 					<ul id='main'>
 						<li>
 							<a href='/'>Home</a>
@@ -104,6 +115,16 @@
 							<a href='/contact/'>Contact Me</a>
 						</li>
 					</ul>
+					<?php
+					wp_nav_menu(
+						array(
+							'menu' => 'social',
+							'menu_id' => 'socials',
+							'container' => '',
+							'theme_location' => 'social'
+						)
+					);
+					?>
 					<ul id='socials'>
 						<li>
 							<a href='https://facebook.com/ARBurrowsWD'><img src='/res/img/social/facebook.svg' alt='Facebook Social Media Link'/></a>
