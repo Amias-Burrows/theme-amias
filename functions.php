@@ -7,7 +7,7 @@ function amias_theme_support() {
 	add_post_type_support('post', 'excerpt');
 }
 
-add_action('after_stup_theme', 'amias_theme_support');
+add_action('after_setup_theme', 'amias_theme_support');
 
 function amias_menus() {
 	$locations = array(
