@@ -11,9 +11,9 @@ add_action('after_setup_theme', 'amias_theme_support');
 
 function amias_menus() {
 	$locations = array(
-		'main' => 'main_menu',
-		'socials' => 'socials',
-		'footer' => 'footer_menu'
+		'main' => 'Main Menu',
+		'socials' => 'Social Menu',
+		'footer' => 'Footer Menu'
 	);
 	register_nav_menus($locations);
 }
@@ -22,13 +22,15 @@ add_action('init', 'amias_menus');
 
 function amias_styles() {
 	wp_enqueue_style('amias_style', get_template_directory_uri() . '/assets/css/main.css', array(), null, 'all');
+	wp_enqueue_style('amias_calendly', 'https://assets.calendly.com/assets/external/widget.css', array(), null, 'all');
 }
 
 add_action('wp_enqueue_scripts', 'amias_styles');
 
 function amias_scripts() {
-	wp_enqueue_script('amias_cookies', get_template_directory_uri() . '/assets/js/cookies.js', array(), null, true);
 	wp_enqueue_script('amias_main_js', get_template_directory_uri() . '/assets/js/main.js', array(), null, true);
+	wp_enqueue_script('amias_calendly', 'https://assets.calendly.com/assets/external/widget.js', array(), null, true);
+	wp_enqueue_script('amias_calendly_init', get_template_directory_uri() . '/assets/js/calendly.js', null, true);
 }
 
 add_action('wp_enqueue_scripts', 'amias_scripts');
