@@ -22,6 +22,9 @@ html {
 				z-index: 2;
 				opacity: 100%;
 			}
+			footer {
+				opacity: 100%;
+			}
 		}
 		.calendly-badge-widget {
 			z-index: -1;
@@ -165,6 +168,10 @@ html {
 					}
 				}
 			}
+		}
+		footer {
+			opacity: 0;
+			transition: opacity 1s ease;
 		}
 		@import '../footer/style';
 	}
