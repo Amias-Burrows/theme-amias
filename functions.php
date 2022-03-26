@@ -38,8 +38,12 @@ function amias_scripts() {
 add_action('wp_enqueue_scripts', 'amias_scripts');
 
 function amias_open_graph($wp_customize) {
+	$wp_customize->add_panel('amias_panel', array(
+		'title' => __('Custom Settings')
+	));
 	$wp_customize->add_section('amias_open_graph_section', array(
-		'title' => __('Open Graph Controls')
+		'title' => __('Open Graph Controls'),
+		'panel' => 'amias_panel'
 	));
 	$wp_customize->add_setting('amias_open_graph_image');
 	$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'amias_open_graph_image', array(
