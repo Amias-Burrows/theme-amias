@@ -37,4 +37,18 @@ function amias_scripts() {
 
 add_action('wp_enqueue_scripts', 'amias_scripts');
 
+function amias_open_graph($wp_customize) {
+	$wp_customize->add_section('amias_open_graph_section', array(
+		'title' => __('Open Graph Controls')
+	));
+	$wp_customize->add_setting('amias_open_graph_image');
+	$wp_customize->add_control(new WP_Customize_Image_Control($wo_customize, 'amias_open_graph_image', array(
+		'label' => 'Open Graph Image',
+		'section' => 'amias_open_graph_section',
+		'settings' => 'amias_open_graph_section'
+	)));
+}
+
+add_action('customize_register', 'amias_open_graph');
+
 ?>

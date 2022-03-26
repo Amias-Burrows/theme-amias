@@ -6,14 +6,13 @@
 		<meta property='og:type' content='website'/>
 		<meta property='og:locale' content='en_GB'/>
 		<meta property="og:url" content="<?php site_url(); ?>"/>
-		<meta property='og:image' content='<?php get_theme_mod('open_graph_image'); ?>'/>
+		<meta property='og:image' content='<?php get_theme_mod('amias_open_graph_image'); ?>'/>
 		<meta property="og:title" content="<?php the_title(); ?>"/>
 		<meta property="og:description" content="<?php get_the_excerpt(); ?>"/>
 
 		<?php
 		wp_head();
 		?>
-		<link rel="stylesheet" href="/res/css/main.css"/>
 
 			<!-- Google Tag Manager
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPE0E8RNM4"></script><script src="/res/js/analytics.js"></script>
