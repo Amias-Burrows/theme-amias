@@ -16,6 +16,7 @@ function amias_menus() {
 		'socials' => 'social',
 		'footer' => 'footer_menu'
 	);
+	register_nav_menus($locations);
 }
 
 add_action('init', 'amias_menus');
