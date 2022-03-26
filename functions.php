@@ -42,7 +42,7 @@ function amias_open_graph($wp_customize) {
 		'title' => __('Open Graph Controls')
 	));
 	$wp_customize->add_setting('amias_open_graph_image');
-	$wp_customize->add_control(new WP_Customize_Image_Control($wo_customize, 'amias_open_graph_image', array(
+	$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'amias_open_graph_image', array(
 		'label' => 'Open Graph Image',
 		'section' => 'amias_open_graph_section',
 		'settings' => 'amias_open_graph_section'
