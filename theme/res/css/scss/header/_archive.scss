@@ -1,0 +1,87 @@
+@import '../colour';
+@import '../keyframes';
+
+
+header {
+	position: fixed;
+	top: 0;
+	left: 50vw;
+	transform: translateX(-50%);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100vw;
+	height: 10vh;
+	transition: transform 0.5s ease 0.5s, left 0.5s ease 0.5s, width 0.5s ease, border-radius 0.5s ease;
+	background-color: rgba($secondary, 0.5);
+	&.scroll {
+		border-radius: 50%;
+		width: 10vh;
+		left: 0;
+		transform: translateX(0);
+		.content {
+			.header-logo {
+				animation-name: spin-fade-out-header-menu;
+				animation-duration: 0.5s;
+				animation-delay: 0.5s;
+				opacity: 0;
+				z-index: 0;
+				height: 5vh;
+				transition: transform 0.5s ease 0.5s, opacity 0.5s ease 0.5s, height 0.5s ease;
+			}
+			.header-menu-btn {
+				animation-name: spin-fade-in-header-menu;
+				animation-duration: 0.5s;
+				animation-delay: 0.5s;
+				opacity: 1;
+				z-index: 1;
+				transition: opacity 0.5s ease;
+			}
+		}
+	}
+	.content {
+		position: relative;
+		.header-logo {
+			transform-origin: top left;
+			animation-name: spin-fade-in-header-menu;
+			animation-duration: 0.5s;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			z-index: 1;
+			opacity: 1;
+			width: auto;
+			height: 8vh;
+			transition: transform 0.5s ease, opacity 0.5s ease, height 0.5s ease 0.5s;
+		}
+		.header-menu-btn {
+			transform-origin: top left;
+			animation-name: spin-fade-out-header-menu;
+			animation-duration: 0.5s;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			z-index: 0;
+			opacity: 0;
+			width: auto;
+			height: 8vh;
+			transition: opacity 0.5s ease 0.5s;
+			transition-delay: 0.5s;
+			color: black;
+		}
+		.header-menu {
+			z-index: -1;
+			width: 0;
+			ul {
+				opacity: 0;
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	header {
+	}
+}

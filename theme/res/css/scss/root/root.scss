@@ -1,0 +1,21 @@
+@import '../colour';
+@import '../fonts';
+
+html {
+	overflow-x: hidden;
+	body {
+		overflow-x: hidden;
+		margin: 0;
+		padding: 0;
+		&.home {
+			@import '../header/home';
+			@import '../main/home';
+			@import '../footer/home';
+		}
+		&.archive {
+			@import '../header/archive';
+			@import '../main/archive';
+			@import '../footer/archive';
+		}
+	}
+}

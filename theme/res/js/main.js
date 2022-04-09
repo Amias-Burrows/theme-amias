@@ -2,14 +2,12 @@ var media = window.matchMedia('(min-width: 768px)');
 
 	//Scroll effect on nav bar
 window.onscroll = function() {
-	const header = document.querySelector('#content');
+	const header = document.querySelector('header');
 
 	if (window.scrollY > 0 && !header.classList.contains('scroll')) {
 		header.classList.add('scroll');
-		document.body.classList.add('scroll');
 	} else if (window.scrollY <= 0) {
 		header.classList.remove('scroll');
-		document.body.classList.remove('scroll');
 	}
 		//Icon Show Scroll Effect
 	if (!media.matches) {

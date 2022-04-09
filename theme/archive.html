@@ -18,7 +18,7 @@
 		<link rel="icon" href="/res/img/logo/logo.ico" type="image/x-icon"/>
 
 			<!-- Stylesheets -->
-		<link rel="stylesheet" href="/res/css/main.css"/>
+		<link rel="stylesheet" href="./res/css/root.css"/>
 
 			<!-- RaleWay Font -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,23 +28,25 @@
 			<!-- Google Tag Manager -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPE0E8RNM4"></script><script src="/res/js/analytics.js"></script>
 	</head>
-	<body>
+	<body class='archive' style='height: 110vh;'>
 		<header>
-			<img class='header-logo' src='./res/img/logo/logo.svg' alt='Site Logo'/>
-			<img class='header-menu-btn' src='./res/img/menu.svg' alt='Menu Button'/>
-			<nav class='header-menu'>
-				<ul>
-					<li>
-						<a href='#'>Home</a>
-					</li>
-					<li>
-						<a href='#'>About</a>
-					</li>
-					<li>
-						<a href='#'>Contact</a>
-					</li>
-				</ul>
-			</nav>
+			<div class='content'>
+				<img class='header-logo' src='./res/img/logo/logo.svg' alt='Site Logo'/>
+				<svg class='header-menu-btn' xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><title>ionicons-v5-j</title><line x1="88" y1="152" x2="424" y2="152" style="fill:none;stroke:#000;stroke-linecap:round;stroke-miterlimit:10;stroke-width:48px"/><line x1="88" y1="256" x2="424" y2="256" style="fill:none;stroke:#000;stroke-linecap:round;stroke-miterlimit:10;stroke-width:48px"/><line x1="88" y1="360" x2="424" y2="360" style="fill:none;stroke:#000;stroke-linecap:round;stroke-miterlimit:10;stroke-width:48px"/></svg>
+				<nav class='header-menu'>
+					<ul>
+						<li>
+							<a href='#'>Home</a>
+						</li>
+						<li>
+							<a href='#'>About</a>
+						</li>
+						<li>
+							<a href='#'>Contact</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
 		</header>
 		<main>
 			<ul id='archive-list'>
@@ -73,5 +75,6 @@
 			</nav>
 			<p class='footer-smallprint'>Copyright &copy; AR Burrows Web Development 2020 - present</p>
 		</footer>
+		<script src='./res/js/main.js'></script>
 	</body>
 </html>
