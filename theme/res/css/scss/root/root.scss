@@ -13,6 +13,7 @@ html {
 			@import '../footer/home';
 		}
 		&.archive {
+			padding-top: 10vh;
 			@import '../header/archive';
 			@import '../main/archive';
 			@import '../footer/archive';

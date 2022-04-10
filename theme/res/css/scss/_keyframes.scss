@@ -3,18 +3,12 @@
 		opacity: 0;
 		transform: rotate(0deg) translate(-50%, -50%);
 	}
-	25% {
-		transition: rotate(180deg) translate(-50%, -50%);
-	}
 	50% {
-		transition: rotate(360deg) translate(-50%, -50%);
-	}
-	75% {
-		transition: rotate(540deg) translate(-50%, -50%);
+		transform: rotate(180deg) translate(-50%, -50%);
 	}
 	100% {
-		opacity: 1;
 		transform: rotate(720deg) translate(-50%, -50%);
+		opacity: 1;
 	}
 }
 
@@ -23,17 +17,11 @@
 		opacity: 1;
 		transform: rotate(0deg) translate(-50%, -50%);
 	}
-	25% {
-		transition: rotate(180deg) translate(-50%, -50%);
-	}
 	50% {
-		transition: rotate(360deg) translate(-50%, -50%);
-	}
-	75% {
-		transition: rotate(540deg) translate(-50%, -50%);
+		transform: rotate(180deg) translate(-50%, -50%);
 	}
 	100% {
-		opacity: 0;
 		transform: rotate(720deg) translate(-50%, -50%);
+		opacity: 0;
 	}
 }

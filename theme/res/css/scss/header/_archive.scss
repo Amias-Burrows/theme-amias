@@ -12,12 +12,14 @@ header {
 	justify-content: center;
 	width: 100vw;
 	height: 10vh;
-	transition: transform 0.5s ease 0.5s, left 0.5s ease 0.5s, width 0.5s ease, border-radius 0.5s ease;
+	transition: transform 0.5s ease, left 0.5s ease, width 0.25s ease 0.75s, top 0.25s ease 0.75s, border-radius 0.25s ease 0.5s;
 	background-color: rgba($secondary, 0.5);
 	&.scroll {
+		transition: transform 0.5s ease 0.5s, left 0.5s ease 0.5s, width 0.25s ease, top 0.25s ease, border-radius 0.25s ease 0.25s;
 		border-radius: 50%;
 		width: 10vh;
-		left: 0;
+		top: 10px;
+		left: 10px;
 		transform: translateX(0);
 		.content {
 			.header-logo {
@@ -27,7 +29,7 @@ header {
 				opacity: 0;
 				z-index: 0;
 				height: 5vh;
-				transition: transform 0.5s ease 0.5s, opacity 0.5s ease 0.5s, height 0.5s ease;
+				transition: transform 0.5s ease, opacity 0.5s ease 0.5s, height 0.5s ease;
 			}
 			.header-menu-btn {
 				animation-name: spin-fade-in-header-menu;
@@ -35,16 +37,25 @@ header {
 				animation-delay: 0.5s;
 				opacity: 1;
 				z-index: 1;
-				transition: opacity 0.5s ease;
+				transition: transform 0.5s ease, opacity 0.5s ease 0.5s;
+				cursor: pointer;
 			}
 		}
 	}
 	.content {
+		&.restore {
+			.header-logo {
+				animation-name: spin-fade-in-header-menu;
+				animation-duration: 0.5s;
+			}
+			.header-menu-btn {
+				animation-name: spin-fade-out-header-menu;
+				animation-duration: 0.5s;
+			}
+		}
 		position: relative;
 		.header-logo {
 			transform-origin: top left;
-			animation-name: spin-fade-in-header-menu;
-			animation-duration: 0.5s;
 			position: absolute;
 			top: 50%;
 			left: 50%;
@@ -57,8 +68,6 @@ header {
 		}
 		.header-menu-btn {
 			transform-origin: top left;
-			animation-name: spin-fade-out-header-menu;
-			animation-duration: 0.5s;
 			position: absolute;
 			top: 50%;
 			left: 50%;
@@ -67,8 +76,7 @@ header {
 			opacity: 0;
 			width: auto;
 			height: 8vh;
-			transition: opacity 0.5s ease 0.5s;
-			transition-delay: 0.5s;
+			transition: transform 0.5s ease, opacity 0.5s ease;
 			color: black;
 		}
 		.header-menu {

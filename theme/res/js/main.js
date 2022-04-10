@@ -6,8 +6,10 @@ window.onscroll = function() {
 
 	if (window.scrollY > 0 && !header.classList.contains('scroll')) {
 		header.classList.add('scroll');
+		header.classList.remove('restore');
 	} else if (window.scrollY <= 0) {
 		header.classList.remove('scroll');
+		header.classList.add('restore');
 	}
 		//Icon Show Scroll Effect
 	if (!media.matches) {
@@ -27,11 +29,12 @@ window.onscroll = function() {
 
 
 	//Nav open
-const nav = document.querySelector('#ham').addEventListener('click', navOpen);
+const nav = document.querySelector('.header-menu-btn').addEventListener('click', navOpen);
 
 function navOpen() {
-	const nav = document.querySelector('#ham');
-	const menu = document.querySelector('nav');
+	const nav = document.querySelector('.header-menu-btn');
+	const menu = document.querySelector('.header-menu');
+	const header = document.querySelector('
 
 	if (nav.classList.contains('open')) {
 		document.body.style.overflowY = 'hidden';
