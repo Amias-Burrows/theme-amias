@@ -13,7 +13,19 @@ header {
 	width: 100vw;
 	height: 10vh;
 	transition: transform 0.5s ease, left 0.5s ease, width 0.25s ease 0.75s, top 0.25s ease 0.75s, border-radius 0.25s ease 0.5s;
-	background-color: rgba($secondary, 0.5);
+	background-color: rgba($primary, 0.5);
+	&.restore {
+		.content {
+			.header-logo {
+				animation-name: header-spin-restore;
+				animation-duration: 0.5s;
+			}
+			.header-menu-btn {
+				animation-name: header-spin-restore;
+				animation-duration: 0.5s;
+			}
+		}
+	}
 	&.scroll {
 		transition: transform 0.5s ease 0.5s, left 0.5s ease 0.5s, width 0.25s ease, top 0.25s ease, border-radius 0.25s ease 0.25s;
 		border-radius: 50%;
@@ -23,36 +35,42 @@ header {
 		transform: translateX(0);
 		.content {
 			.header-logo {
-				animation-name: spin-fade-out-header-menu;
+				animation-name: header-spin-scroll;
 				animation-duration: 0.5s;
 				animation-delay: 0.5s;
 				opacity: 0;
 				z-index: 0;
 				height: 5vh;
-				transition: transform 0.5s ease, opacity 0.5s ease 0.5s, height 0.5s ease;
+				transition: transform 0.5s ease, opacity 0.5s ease 0.75s, height 0.5s ease;
 			}
 			.header-menu-btn {
-				animation-name: spin-fade-in-header-menu;
+				animation-name: header-spin-scroll;
 				animation-duration: 0.5s;
 				animation-delay: 0.5s;
 				opacity: 1;
 				z-index: 1;
-				transition: transform 0.5s ease, opacity 0.5s ease 0.5s;
+				transition: transform 0.5s ease, opacity 0.5s ease 0.75s;
 				cursor: pointer;
 			}
 		}
 	}
-	.content {
-		&.restore {
-			.header-logo {
-				animation-name: spin-fade-in-header-menu;
-				animation-duration: 0.5s;
-			}
-			.header-menu-btn {
-				animation-name: spin-fade-out-header-menu;
-				animation-duration: 0.5s;
+	&.open {
+		transition: transform 0.5s ease, left 0.1s ease, width 0.5s ease, top 0.1s ease;
+		width: 100vw;
+		top: 0;
+		left: 0;
+		.content {
+			.header-menu {
+				transition: height 0.25s ease 0.5s;
+				height: 50vh;
+				ul {
+					transition: opacity 0.25s ease 0.75s;
+					opacity: 1;
+				}
 			}
 		}
+	}
+	.content {
 		position: relative;
 		.header-logo {
 			transform-origin: top left;
@@ -64,7 +82,7 @@ header {
 			opacity: 1;
 			width: auto;
 			height: 8vh;
-			transition: transform 0.5s ease, opacity 0.5s ease, height 0.5s ease 0.5s;
+			transition: transform 0.5s ease, opacity 0.5s ease, height 0.5s ease 0.75s;
 		}
 		.header-menu-btn {
 			transform-origin: top left;
@@ -77,13 +95,35 @@ header {
 			width: auto;
 			height: 8vh;
 			transition: transform 0.5s ease, opacity 0.5s ease;
-			color: black;
+			svg {
+				width: auto;
+				height: 8vh;
+				color: black;
+			}
 		}
 		.header-menu {
+			position: absolute;
+			top: -50%;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 50vw;
+			height: 0;
+			overflow: hidden;
 			z-index: -1;
-			width: 0;
+			background-color: $secondary;
+			border-radius: 0 0 5px 5px;
 			ul {
 				opacity: 0;
+				padding: 10vh 10px 10px 10px;
+				text-align: center;
+				li {
+					list-style-type: none;
+					a {
+						color: $light;
+						text-shadow: 1px 1px $accent-1;
+						text-decoration: none;
+					}
+				}
 			}
 		}
 	}

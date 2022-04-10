@@ -32,18 +32,12 @@ window.onscroll = function() {
 const nav = document.querySelector('.header-menu-btn').addEventListener('click', navOpen);
 
 function navOpen() {
-	const nav = document.querySelector('.header-menu-btn');
-	const menu = document.querySelector('.header-menu');
-	const header = document.querySelector('
+	const header = document.querySelector('header');
 
 	if (nav.classList.contains('open')) {
-		document.body.style.overflowY = 'hidden';
-		nav.classList.remove('open');
-		menu.classList.remove('open');
+		header.classList.remove('open');
 	} else {
-		document.body.style.overflowY = 'initial';
-		nav.classList.add('open');
-		menu.classList.add('open');
+		header.classList.add('open');
 	}
 };
 

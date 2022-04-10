@@ -1,27 +1,29 @@
-@keyframes spin-fade-in-header-menu {
+@keyframes header-spin-scroll {
 	0% {
-		opacity: 0;
 		transform: rotate(0deg) translate(-50%, -50%);
+		transition: transform 0.5s ease-in;
 	}
 	50% {
 		transform: rotate(180deg) translate(-50%, -50%);
+		transition: transform 0.5s linear;
 	}
 	100% {
 		transform: rotate(720deg) translate(-50%, -50%);
-		opacity: 1;
+		transition: transform 0.5s ease-out;
 	}
 }
 
-@keyframes spin-fade-out-header-menu {
+@keyframes header-spin-restore {
 	0% {
-		opacity: 1;
 		transform: rotate(0deg) translate(-50%, -50%);
+		transition: transform 0.5s ease-in;
 	}
 	50% {
-		transform: rotate(180deg) translate(-50%, -50%);
+		transform: rotate(-180deg) translate(-50%, -50%);
+		transition: transform 0.5s linear;
 	}
 	100% {
-		transform: rotate(720deg) translate(-50%, -50%);
-		opacity: 0;
+		transform: rotate(-360deg) translate(-50%, -50%);
+		transition: transform 0.5s ease-out;
 	}
 }
