@@ -1,8 +1,35 @@
 @import '../colour';
 
 .archive-list {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+	list-style-type: none;
+	padding: 0;
+	width: 100vw;
 	li {
+		width: 40%;
+		&:nth-child(4n+1) {
+			background-color: rgba($accent-2, 0.5);
+		}
+		&:nth-child(4n+2) {
+			background-color: rgba($secondary, 0.5);
+		}
+		&:nth-child(4n+3) {
+			background-color: rgba($accent-1, 0.5);
+		}
+		&:nth-child(4n+4) {
+			background-color: rgba($primary, 0.5);
+		}
 		.link {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
 		}
 	}
 }
