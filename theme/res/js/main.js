@@ -1,15 +1,21 @@
 var media = window.matchMedia('(min-width: 768px)');
 
 	//Scroll effect on nav bar
-window.onscroll = function() {
+window.onscroll = function() {nav_scroll()};
+
+function nav_scroll() {
 	const header = document.querySelector('header');
 
 	if (window.scrollY > 0 && !header.classList.contains('scroll')) {
 		header.classList.add('scroll');
 		header.classList.remove('restore');
 	} else if (window.scrollY <= 0) {
-		header.classList.remove('scroll');
-		header.classList.add('restore');
+		if (header.classList.contains('open')) {
+			header.wait = true;
+		} else {
+			header.classList.remove('scroll');
+			header.classList.add('restore');
+		}
 	}
 		//Icon Show Scroll Effect
 	if (!media.matches) {
@@ -27,20 +33,24 @@ window.onscroll = function() {
 	}
 }
 
-
 	//Nav open
 const nav = document.querySelector('.header-menu-btn').addEventListener('click', navOpen);
 
 function navOpen() {
 	const header = document.querySelector('header');
 
-	if (nav.classList.contains('open')) {
+	if (header.classList.contains('open')) {
 		header.classList.remove('open');
+		if (header.wait) {
+			nav_scroll();
+			header.wait = false;
+		}
 	} else {
 		header.classList.add('open');
 	}
 };
 
+/*
 	//Contact Open
 document.querySelector('#handle').addEventListener('click', function () {
 	const container = document.querySelector('#contact');
