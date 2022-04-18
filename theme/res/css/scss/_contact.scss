@@ -1,0 +1,105 @@
+.contact-widget {
+	transition: all 1s ease;
+	z-index: 2;
+	position: fixed;
+	bottom: 10vh;
+	left: 5vw;
+	display: flex;
+	&.open {
+		.app-handle {
+			svg {
+				transform: rotate(360deg);
+				#closed {
+					opacity: 0;
+				}
+				#open {
+					opacity: 1;
+					line#top, line#btm {
+						transform: rotate(0);
+					}
+				}
+			}
+		}
+		a {
+			z-index: 2;
+			opacity: 1;
+			&#phone {
+				left: 24vw;
+			}
+			&#email {
+				left: 44vw;
+			}
+			&#download {
+				left: 64vw;
+			}
+		}
+	}
+	.app-handle {
+		cursor: pointer;
+		z-index: 2;
+		background-color: $accent_1;
+		border-radius: 50%;
+		width: 10vw;
+		height: 10vw;
+		padding: 2vw;
+		box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
+		&:hover > svg .open line {
+			stroke: $primary;
+		}
+		svg {
+			width: 10vw;
+			transition: all 1s ease;
+			.closed {
+				transition: all 1s ease;
+				opacity: 1;
+				circle {
+					fill: $light;
+				}
+			}
+			.open {
+				transition: all 1s ease;
+				opacity: 0;
+				line {
+					transition: all 0.5s ease, transform 0.5s ease 1s;
+					transform-origin: 50px 50px;
+					stroke: $accent_2;
+					stroke-width: 7px;
+					stroke-linecap: round;
+					&.top {
+						transform: rotate(-45deg);
+					}
+					&.btm {
+						transform: rotate(45deg);
+					}
+				}
+			}
+		}
+	}
+	a {
+		transition: all 1s ease;
+		z-index: 1;
+		position: fixed;
+		bottom: 10vh;
+		left: 5vw;
+		opacity: 0;
+		width: 10vw;
+		height: 10vw;
+		padding: 2vw;
+		border-radius: 50%;
+		background-color: $accent_1;
+		box-shadow: 0 4px 6px 0 rgba($dark, 0.7);
+		&:hover > svg .stroke {
+			fill: $primary;
+		}
+		svg {
+			width: 10vw;
+			.fill {
+				fill: transparent;
+			}
+			.stroke {
+				transition: all 0.5s ease;
+				fill: $accent_2;
+			}
+		}
+	}
+}

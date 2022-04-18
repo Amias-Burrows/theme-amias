@@ -10,13 +10,14 @@ html {
 		&.home {
 			@import '../header/home';
 			@import '../main/home';
-			@import '../footer/home';
+			@import '../footer/style';
 		}
 		&.archive {
 			padding-top: 15vh;
 			@import '../header/archive';
 			@import '../main/archive';
-			@import '../footer/archive';
+			@import '../footer/style';
 		}
 	}
+	@import '../contact';
 }

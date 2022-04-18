@@ -1,9 +1,10 @@
 var media = window.matchMedia('(min-width: 768px)');
 
 	//Scroll effect on nav bar
-window.onscroll = function() {nav_scroll()};
+window.onscroll = function() { nav_scroll() };
 
 function nav_scroll() {
+	console.log('activating');
 	const header = document.querySelector('header');
 
 	if (window.scrollY > 0 && !header.classList.contains('scroll')) {
@@ -50,20 +51,22 @@ function navOpen() {
 	}
 };
 
-/*
-	//Contact Open
-document.querySelector('#handle').addEventListener('click', function () {
-	const container = document.querySelector('#contact');
 
-	if (container.classList.contains('open')) {
-		container.classList.remove('open');
-	} else {
-		container.classList.add('open');
-	}
-});
+	//Contact Open
+if (document.querySelector('app-handle')) {
+	document.querySelector('.app-handle').addEventListener('click', function () {
+		const container = document.querySelector('#contact');
+	
+		if (container.classList.contains('open')) {
+			container.classList.remove('open');
+		} else {
+			container.classList.add('open');
+		}
+	});
+};
 
 	//Nav Active Page
-const menu = document.querySelector('nav').querySelectorAll('a').forEach( function(anchor, index) {
+const menu = document.querySelector('.header-menu').querySelectorAll('a').forEach( function(anchor, index) {
 	if (anchor.href == window.location.href) {
 		anchor.classList.add('active');
 	}
