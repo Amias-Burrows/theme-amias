@@ -1,5 +1,3 @@
-@import '../colour';
-
 header {
 	z-index: 2;
 	position: fixed;
@@ -36,6 +34,14 @@ header {
 		}
 	}
 	&.open {
+		~ .dark-mode-toggle {
+			opacity: 0;
+			z-index: -1;
+		}
+		~ .contact-widget {
+			opacity: 0;
+			z-index: -1;
+		}
 		.content {
 			.header-menu-btn {
 				top: 2vh;
@@ -103,6 +109,7 @@ header {
 				text-align: right;
 			}
 			h2 {
+				color: $light;
 				margin: 0;
 				transition: all 1s ease-in-out;
 			}
@@ -126,9 +133,7 @@ header {
 			}
 		}
 		.header-menu {
-			background-image: url('../img/fuzz.png');
 			background-color: $secondary;
-			background-attachment: fixed;
 			z-index: 3;
 			position: absolute;
 			top: 0;
@@ -179,6 +184,75 @@ header {
 						text-decoration: none;
 						img {
 							width: 15vw;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	header {
+		&.scroll {
+			.content {
+				.header-logo {
+					height: 15vh;
+				}
+				.header-menu-btn {
+					top: 7vh;
+				}
+			}
+		}
+		&.open {
+			.content {
+				.header-menu-btn {
+					top: 3vh;
+					right: 12vw;
+				}
+				.header-menu {
+					width: 30vw;
+					height: 100vh;
+					box-shadow: 0 -4px 6px 0 rgba(0, 0, 0, 0.4);
+				}
+			}
+		}
+		.content {
+			.header-logo {
+				top: 15vh;
+				left: 5vw;
+				height: 30vh;
+			}
+			.title-section {
+				transform: rotate(-30deg);
+				transform-origin: 85% 0;
+				padding: 5vh 10vw 5vh 20vw;
+				min-height: 17vh;
+				h2 {
+					width: 40vw;
+					padding-left: 20vw;
+				}
+			}
+			.header-menu-btn {
+				right: 10vw;
+			}
+			.header-menu {
+				height: 100vh;
+				border-radius: 0;
+				.main-nav {
+					padding-top: 12vh;
+					li {
+						a {
+							font-size: 2vw;
+						}
+					}
+				}
+				.social-nav {
+					li {
+						a {
+							img {
+								width: 5vw;
+							}
 						}
 					}
 				}
