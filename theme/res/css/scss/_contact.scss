@@ -106,19 +106,14 @@ body.bottom {
 			border-radius: 50%;
 			background-color: $accent_1;
 			box-shadow: 0 4px 6px 0 rgba($dark, 0.7);
-			&:hover > svg .stroke {
-				fill: $primary;
+			&:hover > svg {
+				stroke: $primary;
 			}
 			svg {
 				width: 70%;
 				padding: 15%;
-				.fill {
-					fill: transparent;
-				}
-				.stroke {
-					transition: all 0.5s ease-in-out;
-					fill: $accent_2;
-				}
+				transition: all 0.5s ease-in-out;
+				stroke: $accent_2;
 			}
 		}
 	}

@@ -19,7 +19,7 @@ body.dark {
 }
 
 .dark-mode-toggle {
-	transition: opacity 0.25s ease-in-out, z-index 0.25s ease-in-out;
+	transition: opacity 0.25s ease-in-out, z-index 0.25s ease-in-out, background-color 0.5s ease-in-out;
 	z-index: 2;
 	display: flex;
 	align-items: center;
@@ -28,10 +28,11 @@ body.dark {
 	bottom: 135px;
 	right: 20px;
 	border-radius: 50%;
-	background-color: $dark-mode-dark;
+	background-color: $constant_dark;
 	width: 45px;
 	height: 45px;
 	cursor: pointer;
+	box-shadow: 0 4px 6px 0 rgba($dark, 0.2);
 	.content {
 		position: relative;
 		width: 100%;
@@ -42,8 +43,8 @@ body.dark {
 			height: 70%;
 			padding: 15%;
 			transition: all 0.5s ease-in-out;
-			stroke: rgba($accent-1, 0.3);
-			fill: rgba($accent-1, 0.3);
+			stroke: rgba($accent_1, 0.3);
+			fill: rgba($accent_1, 0.3);
 			opacity: 1;
 			z-index: 2;
 		}
@@ -52,8 +53,8 @@ body.dark {
 			width: 70%;
 			padding: 15%;
 			transition: all 0.5s ease-in-out;
-			stroke: rgba($accent-1, 0.3);
-			fill: rgba($accent-1, 0.3);
+			stroke: rgba($accent_1, 0.3);
+			fill: rgba($accent_1, 0.3);
 			opacity: 0;
 			z-index: -1;
 		}

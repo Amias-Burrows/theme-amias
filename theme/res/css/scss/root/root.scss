@@ -8,6 +8,7 @@
 html {
 	overflow-x: hidden;
 	background-color: $light;
+	color: $text-light;
 	body {
 		overflow-x: hidden;
 		margin: 0;
@@ -18,9 +19,20 @@ html {
 			@import '../footer/style';
 		}
 		&.archive {
-			padding-top: 15vh;
+			padding-top: 30vh;
 			@import '../header/archive';
 			@import '../main/archive';
+			@import '../footer/style';
+		}
+		&.page {
+			padding-top: 30vh;
+			@import '../header/page';
+			@import '../main/page';
+			@import '../footer/style';
+		}
+		&.post {
+			@import '../header/post';
+			@import '../main/post';
 			@import '../footer/style';
 		}
 		&.bottom {
@@ -35,6 +47,7 @@ html {
 	}
 	@import '../contact';
 	@import '../dark-mode-toggle';
+	@import '../scroll-to-content';
 }
 
 a, button.a {
