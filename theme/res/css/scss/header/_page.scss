@@ -198,5 +198,66 @@ header {
 
 @media (min-width: 768px) {
 	header {
+		&.scroll {
+			.content {
+				.header-title-section {
+					top: 50px;
+					left: 10vw;
+					width: 10vh;
+					height: 10vh;
+				}
+				.header-menu-btn {
+					top: 50px;
+					width: 10vh;
+					height: 10vh;
+				}
+			}
+		}
+		&.open {
+			.content {
+				.header-menu-btn {
+					top: 3vh;
+					right: 12vw;
+				}
+				.header-menu {
+					width: 30vw;
+					height: 100vh;
+					box-shadow: 0 -4px 6px 0 rgba(0, 0, 0, 0.4);
+				}
+			}
+		}
+		.content {
+			.header-title-section {
+				transform-origin: 85% 0;
+				width: 30vw;
+				height: 30vw;
+			}
+			.header-menu-btn {
+				right: 10vw;
+				width: 10vh;
+				height: 10vh;
+			}
+			.header-menu {
+				height: 100vh;
+				border-radius: 0;
+				.main-nav {
+					padding-top: 12vh;
+					li {
+						a {
+							font-size: 2vw;
+						}
+					}
+				}
+				.social-nav {
+					li {
+						a {
+							img {
+								width: 5vw;
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 }

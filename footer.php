@@ -1,4 +1,4 @@
-		<footer class='secondary'>
+		<footer>
 			<?php
 			wp_nav_menu(
 				array(

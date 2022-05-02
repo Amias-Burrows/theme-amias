@@ -2,6 +2,8 @@
 
 <html lang="en">
 	<head>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 		<meta property="og:site_name" content="<?php the_title(); ?>"/>
 		<meta property='og:type' content='website'/>
 		<meta property='og:locale' content='en_GB'/>
@@ -36,45 +38,28 @@
 	</head>
 	<body>
 		<header>
-			<div id='content'>
+			<div class='content'>
 				<?php
 				if (function_exists('the_custom_logo')) {
 					$custom_logo_id = get_theme_mod('custom_logo');
 					$logo = wp_get_attachment_image_src($custom_logo_id);
 				}
 				?>
-				<img id='logo' src='<?php echo $logo[0]; ?>' alt='AR Burrows Web Development Logo'/>
-					<div id='contact'>
-						<div id='handle'>
-							<?php
-							include get_template_directory() . '/inc/svg/ellipsis.php';
-							?>
-						</div>
-						<a id='phone' href='tel:<?php echo get_theme_mod('amias_contact_phone'); ?>'>
-							<?php
-							include get_template_directory() . '/inc/svg/phone.php';
-							?>
-						</a>
-						<a id='email' href='mailto:<?php echo get_theme_mod('amias_contact_email'); ?>'>
-							<?php
-							include get_template_directory() . '/inc/svg/email.php';
-							?>
-						</a>
-						<a id='download' href='<?php echo get_theme_mod('amias_contact_contact'); ?>'>
-							<?php
-							include get_template_directory() . '/inc/svg/contact.php';
-							?>
-						</a>
-					</div>
+				<div class='header-title-section'>
+				<a class='header-logo-link' href='<?php get_site_url(); ?>'>
+						<img id='logo' src='<?php echo $logo[0]; ?>' alt='AR Burrows Web Development Logo'/>
+					</a>
+					<h1><?php the_title(); ?></h1>
+				</div>
 					<?php
-					include get_template_directory() . '/inc/svg/hamburger.php';
+					include get_template_directory() . '/inc/svg/header-menu-btn.php';
 					?>
-					<nav class='secondary'>
+					<nav class='header-menu'>
 						<?php
 						wp_nav_menu(
 							array(
 								'menu' => 'main',
-								'menu_id' => 'main',
+								'menu_class' => 'main-nav',
 								'container' => 'ul',
 								'theme_location' => 'main'
 							)
@@ -84,13 +69,14 @@
 						wp_nav_menu(
 							array(
 								'menu' => 'social',
-								'menu_id' => 'socials',
+								'menu_class' => 'social-nav',
 								'container' => 'ul',
 								'theme_location' => 'socials'
 							)
 						);
 						?>
 					</nav>
+					<img class='header-background-img' src='https://picsum.photos/960/600' alt='Background-image'/>
 				</div>
 			</div>
 		</header>

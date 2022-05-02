@@ -21,16 +21,15 @@ function amias_menus() {
 add_action('init', 'amias_menus');
 
 function amias_styles() {
-	wp_enqueue_style('amias_style', get_template_directory_uri() . '/assets/css/main.css', array(), null, 'all');
-	wp_enqueue_style('amias_calendly', 'https://assets.calendly.com/assets/external/widget.css', array(), null, 'all');
+	wp_enqueue_style('amias-page', get_template_directory_uri() . '/assets/css/root.css', array(), null, 'all');
 }
 
 add_action('wp_enqueue_scripts', 'amias_styles');
 
 function amias_scripts() {
-	wp_enqueue_script('amias_main_js', get_template_directory_uri() . '/assets/js/main.js', array(), null, true);
-	wp_enqueue_script('amias_calendly', 'https://assets.calendly.com/assets/external/widget.js', array(), null, true);
-	wp_enqueue_script('amias_calendly_init', get_template_directory_uri() . '/assets/js/calendly.js', null, true);
+	wp_enqueue_script('amias-main-js', get_template_directory_uri() . '/assets/js/main.js', array(), null, true);
+	wp_enqueue_script('amias-dark-mode', get_template_directory_uri() . '/assets/js/dark-mode.js', array(), null, true);
+	wp_enqueue_script('amias-content-scroll', get_template_directory_uri() . '/assets/js/scroll-to-content.js', array(), null, true);
 }
 
 add_action('wp_enqueue_scripts', 'amias_scripts');
