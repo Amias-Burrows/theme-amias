@@ -20,17 +20,17 @@
 		</div>
 		<a class='phone-svg' href='tel:07812061332'>
 			<?php
-			include get_template_directory_uri() . '/inc/svg/phone.php';
+			include get_template_directory() . '/inc/svg/phone.php';
 			?>
 		</a>
 		<a class='email-svg' href='mailto:contact@amias.dev'>
 			<?php
-			include get_template_directory_uri() . '/inc/svg/email.php';
+			include get_template_directory() . '/inc/svg/email.php';
 			?>
 		</a>
 		<a class='download-svg' href='/res/contact.vcf'>
 			<?php
-			include get_template_directory_uri() . '/inc/svg/contact.php';
+			include get_template_directory() . '/inc/svg/contact.php';
 			?>
 		</a>
 	</div>

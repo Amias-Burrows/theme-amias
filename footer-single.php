@@ -13,7 +13,6 @@
 		<?php
 		include get_template_directory() . '/inc/contact-widget.php';
 		include get_template_directory() . '/inc/dark-mode-toggle.php';
-		include get_template_directory() . '/inc/scroll-to-content.php';
 		wp_footer();
 		?>
 	</body>

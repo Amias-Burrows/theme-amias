@@ -48,7 +48,7 @@
 				<img class='header-logo' src='<?php echo $logo[0]; ?>' alt='AR Burrows Logo'/>
 				<div class='header-menu-btn'>
 					<?php
-					include get_template_directory_uri() . '/inc/svg/header-menu-btn.php';
+					include get_template_directory() . '/inc/svg/header-menu-btn-classless.php';
 					?>
 				</div>
 			</div>
@@ -77,7 +77,7 @@
 				$post = get_post();
 				$thumbnail = get_the_post_thumbnail_url($post->ID);
 				if ($thumbnail == false) {
-					$id = 'https://photos.picsum/1024/600?blur=3';
+					$id = 'https://picsum.photos/1024/600?blur=3';
 				} else {
 					$id = $thumbnail;
 				}

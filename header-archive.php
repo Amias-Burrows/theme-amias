@@ -36,7 +36,7 @@
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPE0E8RNM4"></script><script src="/res/js/analytics.js"></script>
 			-->
 	</head>
-	<body>
+	<body class='archive'>
 		<header>
 			<div class='content'>
 				<?php
@@ -49,11 +49,13 @@
 				<a class='header-logo-link' href='<?php get_site_url(); ?>'>
 						<img id='logo' src='<?php echo $logo[0]; ?>' alt='AR Burrows Web Development Logo'/>
 					</a>
-					<h1><?php the_title(); ?></h1>
+					<h1><?php wp_title(''); ?></h1>
 				</div>
-					<?php
-					include get_template_directory() . '/inc/svg/header-menu-btn.php';
-					?>
+					<div class='header-menu-btn'>
+						<?php
+						include get_template_directory() . '/inc/svg/header-menu-btn-classless.php';
+						?>
+					</div>
 					<nav class='header-menu'>
 						<?php
 						wp_nav_menu(

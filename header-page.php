@@ -51,9 +51,11 @@
 					</a>
 					<h1><?php the_title(); ?></h1>
 				</div>
-					<?php
-					include get_template_directory() . '/inc/svg/header-menu-btn.php';
-					?>
+					<div class='header-menu-btn'>
+						<?php
+						include get_template_directory() . '/inc/svg/header-menu-btn-classless.php';
+						?>
+					</div>
 					<nav class='header-menu'>
 						<?php
 						wp_nav_menu(
