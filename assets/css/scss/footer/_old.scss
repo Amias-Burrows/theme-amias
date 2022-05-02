@@ -1,0 +1,36 @@
+footer {
+	padding: 0 5vw 10vh;
+	ul {
+		list-style-type: none;
+		li {
+			a {
+				font-size: 0.7em;
+				text-decoration: none;
+			}
+		}
+	}
+	p {
+		text-align: right;
+	}
+}
+
+@media (min-width: 768px) {
+	footer {
+		width: 98vw;
+		padding: 0 1vw 2vh 1vw;
+		ul {
+			padding-right: 40px;
+			text-align: right;
+			li {
+				a {
+					font-size: 1vw;
+				}
+			}
+		}
+		p {
+			text-align: center;
+			font-size: 0.3rem;
+		}
+	}
+}
+
