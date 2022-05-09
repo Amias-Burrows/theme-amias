@@ -2,6 +2,8 @@
 get_header('archive');
 ?>
 <main>
+	<p>Index Page</p>
+	<?php get_search_form(); ?>
 	<ul class='archive-list'>
 		<?php
 		if (have_posts()) {

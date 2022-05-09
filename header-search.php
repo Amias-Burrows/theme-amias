@@ -36,7 +36,7 @@
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPE0E8RNM4"></script><script src="/res/js/analytics.js"></script>
 			-->
 	</head>
-	<body class='page'>
+	<body class='search'>
 		<header>
 			<div class='content'>
 				<?php
@@ -46,10 +46,9 @@
 				}
 				?>
 				<div class='header-title-section'>
-					<a class='header-logo-link' href='https://amias.dev'>
-						<img class='header-logo' src='<?php echo $logo[0]; ?>' alt='AR Burrows Logo'/>
+				<a class='header-logo-link' href='<?php get_site_url(); ?>'>
+						<img id='logo' src='<?php echo $logo[0]; ?>' alt='AR Burrows Web Development Logo'/>
 					</a>
-					<h1><?php the_title(); ?></h1>
 				</div>
 					<div class='header-menu-btn'>
 						<?php
@@ -78,7 +77,6 @@
 						);
 						?>
 					</nav>
-					<img class='header-background-img' src='https://picsum.photos/960/600' alt='Background-image'/>
 				</div>
 			</div>
 		</header>

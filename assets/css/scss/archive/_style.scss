@@ -1,7 +1,6 @@
 .archive-list {
 	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
+	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	gap: 20px;
@@ -9,14 +8,17 @@
 	padding: 0;
 	width: 100vw;
 	li {
-		width: 40%;
-		border-radius: 5px 5px 5px 40px;
-		box-shadow: 5px 5px 10px rgba($dark, 0.2);
+		width: 70%;
+		border-radius: 5px 40px;
+		box-shadow: 4px 4px 6px 0 rgba($primary, 0.3), -2px -2px 6px rgba($primary, 0.2);
 		&:nth-child(4n+1) {
 			background-color: rgba($accent-2, 0.7);
 			.link {
 				color: $light;
 				text-shadow: 1px 1px $primary;
+			}
+			img {
+				box-shadow: 2px 2px $primary;
 			}
 		}
 		&:nth-child(4n+2) {
@@ -25,12 +27,18 @@
 				color: $light;
 				text-shadow: 1px 1px $accent-1;
 			}
+			img {
+				box-shadow: 2px 2px $accent-1;
+			}
 		}
 		&:nth-child(4n+3) {
 			background-color: rgba($accent-1, 0.7);
 			.link {
 				color: $light;
 				text-shadow: 1px 1px $primary;
+			}
+			img {
+				box-shadow: 2px 2px $primary;
 			}
 		}
 		&:nth-child(4n+4) {
@@ -39,6 +47,13 @@
 				color: $light;
 				text-shadow: 1px 1px $accent-2;
 			}
+			img {
+				box-shadow: 2px 2px $accent-2;
+			}
+		}
+		* {
+			padding: 0;
+			margin: 10px;
 		}
 		.link {
 			display: flex;
@@ -48,6 +63,20 @@
 			text-align: center;
 			text-decoration: none;
 			color: inherit;
+		}
+		img {
+			width: 70%;
+			border-radius: 5px 20px;
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.archive-list {
+		flex-direction: row;
+		flex-wrap: wrap;
+		li {
+			width: 40%;
 		}
 	}
 }
