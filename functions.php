@@ -89,7 +89,7 @@ function amias_contact($wp_customize) {
 	)));
 	$wp_customize->add_setting('amias_contact_page');
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'amias_contact_page', array(
-		'label' => 'Phone Number',
+		'label' => 'Contact Page',
 		'section' => 'amias_contact_section',
 		'settings' => 'amias_contact_page',
 		'type' => 'dropdown-pages'
@@ -98,5 +98,12 @@ function amias_contact($wp_customize) {
 
 add_action('customize_register', 'amias_contact');
 
+function amias_enable_vcard( $mime_types ) {
+	$mime_types['vcf'] = 'text/x-vcard';
+	$mime_types['vcard'] = 'text/x-vcard';
+	return $mime_types;
+}
+
+add_filter('upload_mimes', 'amias_enable_vcard');
 
 ?>

@@ -28,7 +28,7 @@
 			include get_template_directory() . '/inc/svg/email.php';
 			?>
 		</a>
-		<a class='download-svg' href='/res/<?php echo get_theme_mod('amias_contact_contact'); ?>'>
+		<a class='download-svg' href='<?php echo get_theme_mod('amias_contact_contact'); ?>'>
 			<?php
 			include get_template_directory() . '/inc/svg/contact.php';
 			?>
