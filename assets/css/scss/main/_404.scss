@@ -31,10 +31,43 @@ main {
 			align-items: center;
 			justify-content: space-around;
 			text-align: center;
-			.button {
-				background-color: $primary;
-				color: $accent-2;
+			svg {
+				height: 10%;
+				stroke: $text-dark;
+			}
+		}
+		.error-form {
+			margin: auto;
+			width: 90%;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: space-around;
+			text-align: center;
+			input[type=text], textarea {
+				outline: none;
+				border-radius: 15px;
+				background-color: rgba($light, 0.3);
+				box-shadow: 4px 4px 6px 0 rgba($primary, 0.5), -1px -1px 6px rgba($primary, 0.2);
 				border-style: none;
+			}
+			textarea {
+				height: 20vh;
+			}
+			input[type=submit] {
+				border-radius: 15px;
+				background-color: $primary;
+				border-style: none;
+				color: $accent-2;
+				font-weight: 400;
+			}
+			.small * {
+				font-size: 0.3rem;
+				ul {
+					margin: 0;
+					padding: 0;
+				}
 			}
 		}
 	}

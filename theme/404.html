@@ -7,7 +7,7 @@
 
 		<title>404 Error</title>
 
-		<link rel="stylesheet" href="./res/css/root.css"/>
+		<link rel="stylesheet" id='amias-page-css' href="./res/css/root.css"/>
 	</head>
 
 	<body class='error'>
@@ -28,21 +28,11 @@
 		<main>
 			<img class='background' src='https://picsum.photos/1024/600'/>
 			<div class='content'>
-				<h1>Oh No!</h1>
-				<h2>I must have mistyped.  If you think this page should exist let me know via the contact form below.</h2>
-				<form>
-					<input type='text' value='#' placeholder='Type incorrect URL here'/>
-					<label for='message'>Type any additional information here</label>
-					<div class='small'>
-						<p>e.g.</p>
-						<ul>
-							<li>Where you found the link</li>
-							<li>What you were trying to find</li>
-						</ul>
-					</div>
-					<input type='text' name='message'/>
-					<input type='submit' value='Submit Error Report'/>
-				</form>
+				<div class='message'>
+					<h1>Oh No! 404 Error</h1>
+					<p>I must have mistyped.  If you think this page should exist let me know via the contact page linked below.</p>
+					<a class='button' href='#'>Contact Me</a>
+				</div>
 			</div>
 		</main>
 		<footer>
@@ -61,9 +51,6 @@
 			</nav>
 			<p class='footer-smallprint'>Copyright &copy; AR Burrows Web Development 2020 - present</p>
 		</footer>
-		<div class='scroll-to-content'>
-			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><title>Scroll To Content</title><polyline points="112 184 256 328 400 184" style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:48px"/></svg>
-		</div>
 		<div class='dark-mode-toggle'>
 			<div class='content'>
 				<svg class='moon' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><title>Toggle Dark Mode</title><path d="M264,480A232,232,0,0,1,32,248C32,154,86,69.72,169.61,33.33a16,16,0,0,1,21.06,21.06C181.07,76.43,176,104.66,176,136c0,110.28,89.72,200,200,200,31.34,0,59.57-5.07,81.61-14.67a16,16,0,0,1,21.06,21.06C442.28,426,358,480,264,480Z"/></svg>
@@ -101,5 +88,22 @@
 				</a>
 			</div>
 		</div>
+		<!-- Calendly badge widget begin -->
+		<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+		<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+		<script type="text/javascript">
+			window.onload = function() {
+				Calendly.initBadgeWidget({
+					url: 'https://calendly.com/ar-burrows-web-development/30min',
+					text: 'Schedule time with me',
+					color: '#0069ff',
+					textColor: '#ffffff',
+					branding: true
+				});
+			}
+		</script>
+		<!-- Calendly badge widget end -->
+		<script src='./res/js/main.js'></script>
+		<script src='./res/js/dark-mode.js'></script>
 	</body>
 </html>

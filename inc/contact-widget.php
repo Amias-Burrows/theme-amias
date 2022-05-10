@@ -18,17 +18,17 @@
 				</g>
 			</svg>
 		</div>
-		<a class='phone-svg' href='tel:07812061332'>
+		<a class='phone-svg' href='tel:<?php echo get_theme_mod('amias_contact_phone'); ?>'>
 			<?php
 			include get_template_directory() . '/inc/svg/phone.php';
 			?>
 		</a>
-		<a class='email-svg' href='mailto:contact@amias.dev'>
+		<a class='email-svg' href='mailto:<?php echo get_theme_mod('amias_contact_email'); ?>'>
 			<?php
 			include get_template_directory() . '/inc/svg/email.php';
 			?>
 		</a>
-		<a class='download-svg' href='/res/contact.vcf'>
+		<a class='download-svg' href='/res/<?php echo get_theme_mod('amias_contact_contact'); ?>'>
 			<?php
 			include get_template_directory() . '/inc/svg/contact.php';
 			?>
