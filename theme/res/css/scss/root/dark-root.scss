@@ -14,6 +14,7 @@ html {
 		margin: 0;
 		padding: 0;
 		&.home {
+			padding-top: 30vh;
 			@import '../header/home';
 			@import '../main/home';
 			@import '../footer/style';
@@ -33,6 +34,17 @@ html {
 		&.post {
 			@import '../header/post';
 			@import '../main/post';
+			@import '../footer/style';
+		}
+		&.search {
+			padding-top: 10vh;
+			@import '../header/search';
+			@import '../main/search';
+			@import '../footer/style';
+		}
+		&.error {
+			@import '../header/search';
+			@import '../main/404';
 			@import '../footer/style';
 		}
 		&.bottom {
@@ -68,5 +80,40 @@ button, a.button {
 	transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
 	&:focus, &:active {
 		background-color: transparent;
+	}
+}
+
+.search-form {
+	width: 100vw;
+	display: flex;
+	align-items: stretch;
+	justify-content: center;
+	input[type=text] {
+		outline: none;
+		border-style: none;
+		padding: 2px 5px;
+		background-color: $light;
+		border-radius: 15px 0 0 15px / 50% 0 0 50%;
+		font-weight: 400;
+		box-shadow: 4px 4px 6px 0 rgba($primary, 0.5), -1px -1px 6px rgba($primary, 0.2);
+		color: $text-dark;
+		&:placeholder-shown {
+			color: $primary;
+		}
+	}
+	button {
+		background-color: $primary;
+		border-width: 0;
+		border-radius: 0 15px 15px 0 / 0 50% 50% 0;
+		padding: 2px 5px;
+		box-shadow: 4px 4px 6px 0 rgba($primary, 0.5), -1px -1px 6px rgba($primary, 0.2);
+		&:focus, &:active {
+			border-width: 1px;
+		}
+		svg {
+			width: 20px;
+			height: 20px;
+			fill: $accent-2;
+		}
 	}
 }

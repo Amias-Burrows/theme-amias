@@ -53,7 +53,7 @@ body.bottom {
 			cursor: pointer;
 			position: absolute;
 			z-index: 2;
-			background-color: $accent_1;
+			background-color: $accent-1;
 			border-radius: 50%;
 			width: 100%;
 			height: 100%;
@@ -81,7 +81,7 @@ body.bottom {
 					line {
 						transition: all 0.5s ease-in-out, transform 0.5s ease-in-out 1s;
 						transform-origin: 50px 50px;
-						stroke: $accent_2;
+						stroke: $accent-2;
 						stroke-width: 7px;
 						stroke-linecap: round;
 						&.top {
@@ -104,7 +104,7 @@ body.bottom {
 			width: 100%;
 			height: 100%;
 			border-radius: 50%;
-			background-color: $accent_1;
+			background-color: $accent-1;
 			box-shadow: 0 4px 6px 0 rgba($dark, 0.7);
 			&:hover > svg {
 				stroke: $primary;
@@ -113,7 +113,7 @@ body.bottom {
 				width: 70%;
 				padding: 15%;
 				transition: all 0.5s ease-in-out;
-				stroke: $accent_2;
+				stroke: $accent-2;
 			}
 		}
 	}
