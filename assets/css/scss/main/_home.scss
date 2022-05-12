@@ -1,3 +1,77 @@
 main {
 	min-height: 100vh;
+	.services {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 20px;
+		width: 90vw;
+		padding: 5vh 5vw;
+		.service {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: space-around;
+			padding: 50px;
+			border-radius: 50px;
+			&:nth-child(1) {
+				background-color: $accent-2;
+				.title {
+					text-shadow: 2px 2px $primary;
+				}
+				.price:hover, .price:active, .price:focus {
+					background-color: $primary;
+				}
+			}
+			&:nth-child(2) {
+				background-color: $accent-1;
+				.title {
+					text-shadow: 2px 2px $secondary;
+				}
+				.price:hover, .price:active, .price:focus {
+					background-color: $secondary;
+				}
+			}
+			&:nth-child(3) {
+				background-color: $secondary;
+				.title {
+					text-shadow: 2px 2px $accent-1;
+				}
+				.price:hover, .price:active, .price:focus {
+					background-color: $accent_1;
+				}
+			}
+			.title, .excerpt {
+				text-align: center;
+			}
+			hr {
+				width: 80%;
+				border-style: solid;
+			}
+			.price {
+				transition: border-color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+				&:hover, &:active, &:focus {
+					border-color: transparent;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	main {
+		.services {
+			flex-direction: row;
+			align-items: stretch;
+			.service {
+				.excerpt {
+					margin: 0;
+				}
+				.benefits {
+					margin: 0;
+				}
+			}
+		}
+	}
 }

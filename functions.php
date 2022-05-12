@@ -106,4 +106,7 @@ function amias_enable_vcard( $mime_types ) {
 
 add_filter('upload_mimes', 'amias_enable_vcard');
 
+function amias_services($wp_customize) {
+}
+
 ?>

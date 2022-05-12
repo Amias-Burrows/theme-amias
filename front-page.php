@@ -11,6 +11,7 @@ get_header();
 				the_content();
 			}
 		}
+		include get_template_directory() . '/inc/services.php';
 	?>
 
 </main>
