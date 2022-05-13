@@ -104,9 +104,121 @@ function amias_enable_vcard( $mime_types ) {
 	return $mime_types;
 }
 
-add_filter('upload_mimes', 'amias_enable_vcard');
+add_action('upload_mimes', 'amias_enable_vcard');
 
 function amias_services($wp_customize) {
+	$wp_customize->add_section('amias_services_section', array(
+		'title' => __('Services'),
+		'description' => 'Keep the homepage services up to date',
+		'panel' => 'amias_panel'
+	));
 }
+
+add_action('cusomize_register', 'amias_services');
+
+function amias_service_one($wp_cusomize) {
+	$wp_customize->add_setting('amias_services_title_one');
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'amias_services_title_one', array(
+		'label' => 'First Service Title',
+		'section' => 'amias_services_section',
+		'settings' => 'amias_services_title_one'
+	)));
+	$wp_customize->add_setting('amias_services_excerpt_one');
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'amias_services_excerpt_one', array(
+		'label' => 'First Service Excerpt',
+		'section' => 'amias_services_section',
+		'settings' => 'amias_services_excerpt_one'
+	)));
+	$wp_customize->add_setting('amias_services_benefit_first_one');
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'amias_services_benefit_first_one', array(
+		'label' => 'First Service Benefit No. 1',
+		'section' => 'amias_services_section',
+		'settings' => 'amias_services_benefit_first_one'
+	)));
+	$wp_customize->add_setting('amias_services_benefit_second_one');
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'amias_services_benefit_second_one', array(
+		'label' => 'First Service Benefit No. 2',
+		'section' => 'amias_services_section',
+		'settings' => 'amias_services_benefit_second_one'
+	)));
+	$wp_customize->add_setting('amias_services_price_one');
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'amias_services_price_one', array(
+		'label' => 'First Service Price',
+		'section' => 'amias_services_section',
+		'settings' => 'amias_services_price_one'
+	)));
+}
+
+add_action('customize_register', 'amias_service_one');
+
+function amias_service_two($wp_cusomize) {
+	$wp_customize->add_setting('amias_services_title_two');
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'amias_services_title_two', array(
+		'label' => 'Second Service Title',
+		'section' => 'amias_services_section',
+		'settings' => 'amias_services_title_two'
+	)));
+	$wp_customize->add_setting('amias_services_excerpt_two');
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'amias_services_excerpt_two', array(
+		'label' => 'Second Service Excerpt',
+		'section' => 'amias_services_section',
+		'settings' => 'amias_services_excerpt_two'
+	)));
+	$wp_customize->add_setting('amias_services_benefit_first_two');
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'amias_services_benefit_first_two', array(
+		'label' => 'Second Service Benefit No. 1',
+		'section' => 'amias_services_section',
+		'settings' => 'amias_services_benefit_first_two'
+	)));
+	$wp_customize->add_setting('amias_services_benefit_second_two');
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'amias_services_benefit_second_two', array(
+		'label' => 'Second Service Benefit No. 2',
+		'section' => 'amias_services_section',
+		'settings' => 'amias_services_benefit_second_two'
+	)));
+	$wp_customize->add_setting('amias_services_price_two');
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'amias_services_price_two', array(
+		'label' => 'Second Service Price',
+		'section' => 'amias_services_section',
+		'settings' => 'amias_services_price_two'
+	)));
+}
+
+add_action('customize_register', 'amias_service_two');
+
+function amias_service_three($wp_cusomize) {
+	$wp_customize->add_setting('amias_services_title_three');
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'amias_services_title_three', array(
+		'label' => 'Third Service Title',
+		'section' => 'amias_services_section',
+		'settings' => 'amias_services_title_three'
+	)));
+	$wp_customize->add_setting('amias_services_excerpt_three');
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'amias_services_excerpt_three', array(
+		'label' => 'Third Service Excerpt',
+		'section' => 'amias_services_section',
+		'settings' => 'amias_services_excerpt_three'
+	)));
+	$wp_customize->add_setting('amias_services_benefit_first_three');
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'amias_services_benefit_first_three', array(
+		'label' => 'Third Service Benefit No. 1',
+		'section' => 'amias_services_section',
+		'settings' => 'amias_services_benefit_first_three'
+	)));
+	$wp_customize->add_setting('amias_services_benefit_second_three');
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'amias_services_benefit_second_three', array(
+		'label' => 'Third Service Benefit No. 2',
+		'section' => 'amias_services_section',
+		'settings' => 'amias_services_benefit_second_three'
+	)));
+	$wp_customize->add_setting('amias_services_price_three');
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'amias_services_price_three', array(
+		'label' => 'Third Service Price',
+		'section' => 'amias_services_section',
+		'settings' => 'amias_services_price_three'
+	)));
+}
+
+add_action('customize_register', 'amias_service_three');
 
 ?>
