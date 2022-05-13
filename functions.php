@@ -147,6 +147,13 @@ function amias_service_one($wp_cusomize) {
 		'section' => 'amias_services_section',
 		'settings' => 'amias_services_price_one'
 	)));
+	$wp_customize->add_setting('amias_services_location_one');
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'amias_services_location_one', array(
+		'label' => 'First Service Link',
+		'section' => 'amias_services_section',
+		'settings' => 'amias_services_location_one',
+		'type' => 'dropdown-pages'
+	)));
 }
 
 add_action('customize_register', 'amias_service_one');
@@ -182,6 +189,13 @@ function amias_service_two($wp_cusomize) {
 		'section' => 'amias_services_section',
 		'settings' => 'amias_services_price_two'
 	)));
+	$wp_customize->add_setting('amias_services_location_two');
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'amias_services_location_two', array(
+		'label' => 'Second Service Link',
+		'section' => 'amias_services_section',
+		'settings' => 'amias_services_location_two',
+		'type' => 'dropdown-pages'
+	)));
 }
 
 add_action('customize_register', 'amias_service_two');
@@ -216,6 +230,13 @@ function amias_service_three($wp_cusomize) {
 		'label' => 'Third Service Price',
 		'section' => 'amias_services_section',
 		'settings' => 'amias_services_price_three'
+	)));
+	$wp_customize->add_setting('amias_services_location_three');
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'amias_services_location_three', array(
+		'label' => 'Third Service Link',
+		'section' => 'amias_services_section',
+		'settings' => 'amias_services_location_three',
+		'type' => 'dropdown-pages'
 	)));
 }
 
