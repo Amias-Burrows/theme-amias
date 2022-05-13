@@ -28,7 +28,7 @@
 			include get_template_directory() . '/inc/svg/email.php';
 			?>
 		</a>
-		<a class='download-svg' href='<?php echo get_template_directory() . '/inc/contact.vcf'; ?>'>
+		<a class='download-svg' href='<?php echo get_template_directory_uri() . '/inc/contact.vcf'; ?>'>
 			<?php
 			include get_template_directory() . '/inc/svg/contact.php';
 			?>

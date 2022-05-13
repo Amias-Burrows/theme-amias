@@ -114,7 +114,7 @@ function amias_services($wp_customize) {
 	));
 }
 
-add_action('cusomize_register', 'amias_services');
+add_action('customize_register', 'amias_services');
 
 function amias_service_one($wp_customize) {
 	$wp_customize->add_setting('amias_services_title_one');
