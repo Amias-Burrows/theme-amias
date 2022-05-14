@@ -252,7 +252,7 @@ function amias_calendly_section($wp_customize) {
 	));
 }
 
-add_action('customize_panel', 'amias_calendly_section');
+add_action('customize_register', 'amias_calendly_section');
 
 function amias_calendly($wp_customize) {
 	$wp_customize->add_setting('amias_calendly_url');
@@ -288,6 +288,6 @@ function amias_calendly($wp_customize) {
 	)));
 }
 
-add_action('customize_panel', 'amias_calendly');
+add_action('customize_register', 'amias_calendly');
 
 ?>
