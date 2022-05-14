@@ -22,6 +22,7 @@ add_action('init', 'amias_menus');
 
 function amias_styles() {
 	wp_enqueue_style('amias-page', get_template_directory_uri() . '/assets/css/root.css', array(), null, 'all');
+	wp_enqueue_style('amias_calendly_widget_css', 'https://assets.calendly.com/assets/external/widget.css', array(), null, 'all');
 }
 
 add_action('wp_enqueue_scripts', 'amias_styles');
@@ -30,6 +31,7 @@ function amias_scripts() {
 	wp_enqueue_script('amias-main-js', get_template_directory_uri() . '/assets/js/main.js', array(), null, true);
 	wp_enqueue_script('amias-dark-mode', get_template_directory_uri() . '/assets/js/dark-mode.js', array(), null, true);
 	wp_enqueue_script('amias-content-scroll', get_template_directory_uri() . '/assets/js/scroll-to-content.js', array(), null, true);
+	wp_enqueue_style('amias_calendly_widget_js', 'https://assets.calendly.com/assets/external/widget.js', array(), null, true);
 }
 
 add_action('wp_enqueue_scripts', 'amias_scripts');
@@ -241,5 +243,51 @@ function amias_service_three($wp_customize) {
 }
 
 add_action('customize_register', 'amias_service_three');
+
+function amias_calendly_section($wp_customize) {
+	$wp_customize->add_section('amias_calendly_section', array(
+		'title' => __('Calendly Badge'),
+		'description' => 'Update calendly link and content',
+		'panel' => 'amias_panel'
+	));
+}
+
+add_action('customize_panel', 'amias_calendly_section');
+
+function amias_calendly($wp_customize) {
+	$wp_customize->add_setting('amias_calendly_url');
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'amias_calendly_url', array(
+		'label' => 'Link to Calendly Event',
+		'section' => 'amias_calendly_section',
+		'settings' => 'amias_calendly_url'
+	)));
+	$wp_customize->add_setting('amias_calendly_text');
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'amias_calendly_text', array(
+		'label' => 'Button text',
+		'section' => 'amias_calendly_section',
+		'settings' => 'amias_calendly_text'
+	)));
+	$wp_customize->add_setting('amias_calendly_colour');
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'amias_calendly_colour', array(
+		'label' => 'HEX colour value for the background',
+		'section' => 'amias_calendly_section',
+		'settings' => 'amias_calendly_colour'
+	)));
+	$wp_customize->add_setting('amias_calendly_text_colour');
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'amias_calendly_text_colour', array(
+		'label' => 'HEX colour value for the text',
+		'section' => 'amias_calendly_section',
+		'settings' => 'amias_calendly_text_colour'
+	)));
+	$wp_customize->add_setting('amias_calendly_branding');
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'amias_calendly_branding', array(
+		'label' => 'check this for your custom branding',
+		'section' => 'amias_calendly_section',
+		'settings' => 'amias_calendly_branding',
+		'type' => 'checkbox'
+	)));
+}
+
+add_action('customize_panel', 'amias_calendly');
 
 ?>
