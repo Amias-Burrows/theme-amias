@@ -20,11 +20,14 @@ form {
 				border-radius: 5px 5px 0 0;
 				border-style: none none solid none;
 				border-color: $text-dark;
+				border-width: 1px;
 				outline: none;
 				color: $text-dark;
 				&:hover, &:focus, &:active {
 					background-color: $text-dark;
 					opacity: 50%;
+					border-width: 2px;
+					border-color: $primary;
 				}
 				&[type=submit] {
 					border-radius: 5px;
