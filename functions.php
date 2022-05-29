@@ -293,7 +293,9 @@ add_action('customize_register', 'amias_calendly');
 function amias_footer_widget() {
 	register_sidebar(array(
 		'name' => __('Footer Widget', 'textdomain'),
-		'id' => 'footer-widget'
+		'id' => 'footer-widget',
+		'before_widget' => '<div class="widget-item">',
+		'after_widget' => '</div>'
 	));
 }
 
