@@ -1,7 +1,7 @@
 		<footer>
 			<div class='footer-widget'>
 				<?php
-				dynamic_sidebar('footer-widget');
+				dynamic_sidebar('Footer Widget');
 				?>
 			</div>
 			<?php
