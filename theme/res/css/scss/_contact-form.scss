@@ -24,10 +24,10 @@ form {
 				outline: none;
 				color: $text-dark;
 				&:hover, &:focus, &:active {
-					background-color: $text-dark;
-					opacity: 50%;
-					border-width: 2px;
+					background-color: rgba($text-dark, 0.5);
+					border-width: 4px;
 					border-color: $primary;
+					color: $text-light;
 				}
 				&[type=submit] {
 					border-radius: 5px;
