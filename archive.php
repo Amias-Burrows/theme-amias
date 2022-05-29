@@ -2,7 +2,6 @@
 get_header('archive');
 ?>
 <main>
-	<p>Archive Page</p>
 	<?php get_search_form(); ?>
 	<ul class='archive-list'>
 		<?php
