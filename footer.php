@@ -1,4 +1,9 @@
 		<footer>
+			<div class='footer-widget'>
+				<?php
+				dynamic_sidebar('footer-widget');
+				?>
+			</div>
 			<?php
 			wp_nav_menu(
 				array(

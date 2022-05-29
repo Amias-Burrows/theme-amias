@@ -290,4 +290,13 @@ function amias_calendly($wp_customize) {
 
 add_action('customize_register', 'amias_calendly');
 
+function amias_footer_widget() {
+	register_sidebar(array(
+		'name' => __('Footer Widget', 'textdomain'),
+		'id' => 'footer-widget'
+	));
+}
+
+add_action('widgets_init', 'amias_footer_widget');
+
 ?>
