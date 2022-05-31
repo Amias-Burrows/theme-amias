@@ -1,8 +1,30 @@
 main {
 	min-height: 100vh;
 	padding: 20px;
-	img {
+	.wp-block-image {
+		width: auto;
+		height: auto;
 		max-width: 300px;
-		aspect-ratio: 4 / 3;
+		max-height: 300px;
+		object-fit: cover;
+		margin: 0;
+		border-radius: 20px;
+		&:nth-child(1) {
+			box-shadow: 2px 2px $primary;
+		}
+		&:nth-child(2) {
+			box-shadow: 2px 2px $accent-1;
+		}
+		&:nth-child(2) {
+			box-shadow: 2px 2px $secondary;
+		}
+		&:nth-child(3) {
+			box-shadow: 2px 2px $accent-2;
+		}
+		img {
+			width: auto;
+			height: auto;
+			object-fit: cover;
+		}
 	}
 }
