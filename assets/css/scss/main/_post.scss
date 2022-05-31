@@ -1,4 +1,8 @@
 main {
 	min-height: 100vh;
 	padding: 20px;
+	img {
+		max-width: 300px;
+		aspect-ratio: 4 / 3;
+	}
 }
