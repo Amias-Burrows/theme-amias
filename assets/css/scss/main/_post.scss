@@ -9,17 +9,23 @@ main {
 		object-fit: cover;
 		margin: 0;
 		border-radius: 20px;
+		border-width: 1px;
+		border-style: solid;
 		&:nth-child(1) {
 			box-shadow: 2px 2px $primary;
+			border-color: $primary;
 		}
 		&:nth-child(2) {
 			box-shadow: 2px 2px $accent-1;
+			border-color: $accent-1;
 		}
 		&:nth-child(2) {
 			box-shadow: 2px 2px $secondary;
+			border-color: $secondary;
 		}
 		&:nth-child(3) {
 			box-shadow: 2px 2px $accent-2;
+			border-color: $accent-2;
 		}
 		img {
 			width: auto;
