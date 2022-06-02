@@ -16,7 +16,7 @@ form {
 				background-color: $primary;
 				color: $text-dark;
 			}
-			input {
+			input, textarea {
 				border-radius: 5px 5px 0 0;
 				border-style: none none solid none;
 				border-color: $text-dark;
