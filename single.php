@@ -11,6 +11,9 @@ get_header('single');
 				the_content();
 			}
 		}
+		if (comments_open()) {
+			comments_template();
+		}
 	?>
 
 </main>

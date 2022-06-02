@@ -1,4 +1,4 @@
-@import '../dark-colour';
+@import '../colour/dark-colour';
 @import '../fonts';
 
 * {
@@ -57,9 +57,9 @@ html {
 			transition: all 0.25s ease-in-out;
 		}
 	}
-	@import '../contact';
-	@import '../dark-mode-toggle';
-	@import '../scroll-to-content';
+	@import '../widget/contact';
+	@import '../widget/dark-mode-toggle';
+	@import '../widget/scroll-to-content';
 }
 
 a, button.a {
@@ -118,4 +118,4 @@ button, a.button {
 	}
 }
 
-@import '../contact-form';
+@import '../widget/contact-form';
