@@ -7,6 +7,18 @@ footer {
 	border-bottom-style: solid;
 	border-width: 10px;
 	border-color: $accent-2;
+	.footer-widget {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-around;
+		gap: 10px;
+		width: 100%;
+		.widget-item {
+			width: 50%;
+		}
+	}
 	ul {
 		list-style-type: none;
 		text-align: center;
@@ -27,5 +39,17 @@ footer {
 	}
 	p {
 		text-align: right;
+	}
+}
+
+@media (min-width: 768px) {
+	footer {
+		.footer-widget {
+			display: grid;
+			grid-template-columns: auto auto auto;
+			.widget-item {
+				width: auto;
+			}
+		}
 	}
 }
