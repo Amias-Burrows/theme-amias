@@ -150,9 +150,6 @@ header {
 						color: $light;
 						text-shadow: 2px 2px $accent-1;
 						text-decoration: none;
-						img {
-							width: 15vw;
-						}
 					}
 				}
 			}
@@ -187,15 +184,6 @@ header {
 					li {
 						a {
 							font-size: 2vw;
-						}
-					}
-				}
-				.social-nav {
-					li {
-						a {
-							img {
-								width: 5vw;
-							}
 						}
 					}
 				}
